@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import $ from 'jquery';
 
 /**
  * Generated class for the ReportPage page.
@@ -20,6 +21,9 @@ export class ReportPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad ReportPage');
+    $(".report-header li").click(function(){
+      console.log("22222222222")
+    })
   }
 
 }
