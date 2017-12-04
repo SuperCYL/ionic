@@ -42,9 +42,87 @@ page-report {
             right:0;
             line-height: 42px;
             background: rgba(0,0,0,0.48);
-            font-size: 1.5rem;
+            font-size: r(28);
             color: #F2F4F7;
             padding-left: 20px;
+        }
+    }
+    .report-cont{
+        width: 100%;
+        background-color: #F2F4F7;
+        height: 500px;
+        .report-item{
+            width:100%;
+            background-color: #ffffff;
+            height: 300px;
+            .report-item-center{
+                width:90%;
+                margin:0 auto;
+                .report-item-tit{
+                    li{
+                        width:50%;
+                        float: left;
+                        position: relative;
+                        padding:10px 0;
+                        font-size: r(28);
+                        color: #4F4F6F;
+                    }
+                    .tit-name{
+                        padding-left: 25px;
+                        .tit-icon{
+                            width: r(42);
+                            height: r(42);
+                            background-image: url(../../assets/icon/country_icon.png);
+                            background-size: 100%;
+                            display: inline-block;
+                            position: absolute;
+                            left: 0;
+                        }
+                    }
+                    .tit-total{
+                        text-align: right;
+                    }
+                }
+                .report-list{
+                    .report-list-li{
+                        border-top: 1px solid #EAE9F2;
+                        .re-p{
+                            font-size: r(28);
+                            color: #4F4F6F;
+                            line-height: 40px;
+                        }
+                        .re-num{
+                            .re-num-i{
+                                float: left;
+                                width:45%;
+                                background: #F6FAFF;
+                                border-radius: r(8);
+                                text-align: center;
+                                .i-n{
+                                    line-height: 40px;
+                                    .i-n-l{
+                                        font-size: r(40);
+                                        color: #4F4F6F;
+                                    }
+                                    .i-n-p{
+                                        font-size: r(22);
+                                        color: #F1453D;
+                                        margin-left:5px;
+                                    }
+                                }
+                                .i-b{
+                                    font-size: r(22);
+                                    color: #88889C;
+                                    line-height: 32px;
+                                }
+                            }
+                            .re-num-i-right{
+                                float: right;
+                            }
+                        }
+                    }
+                }
+            }
         }
     }
 }
