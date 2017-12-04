@@ -14,3 +14,36 @@
 // To declare rules for a specific mode, create a child rule
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
+*{
+    margin: 0;
+    padding:0;
+}
+html,body{
+    font-size: r(24);
+    font-family: PingFangSC-Regular;
+}
+ul li{
+    list-style: none;
+}
+/*==for IE6/7 Maxthon2==*/
+.clearbox {
+    zoom:1;
+}    
+/*清除浮动*/
+.clearbox:after {
+   clear:both;
+   content:'.';
+   display:block;
+   width: 0;
+   height: 0;
+   visibility:hidden;
+}
+/*px-rem换算*/
+@function r($px) {
+    @return $px / 32 * 1rem;
+}
+/*tab选中样式*/
+.tab-active{
+    background: #35B7F3;
+    color: #ffffff!important;
+}
