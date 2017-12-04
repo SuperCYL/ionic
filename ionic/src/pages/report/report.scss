@@ -50,20 +50,18 @@ page-report {
     .report-cont{
         width: 100%;
         background-color: #F2F4F7;
-        height: 500px;
         .report-item{
             width:100%;
             background-color: #ffffff;
-            height: 300px;
             .report-item-center{
                 width:90%;
                 margin:0 auto;
                 .report-item-tit{
+                    line-height: 40px;
                     li{
                         width:50%;
                         float: left;
                         position: relative;
-                        padding:10px 0;
                         font-size: r(28);
                         color: #4F4F6F;
                     }
@@ -72,11 +70,20 @@ page-report {
                         .tit-icon{
                             width: r(42);
                             height: r(42);
-                            background-image: url(../../assets/icon/country_icon.png);
                             background-size: 100%;
                             display: inline-block;
                             position: absolute;
                             left: 0;
+                            top:10px;
+                        }
+                        .tit-icon-country{
+                            background-image: url(../../assets/icon/country_icon.png);
+                        }
+                        .tit-icon-region{
+                            background-image: url(../../assets/icon/region_icon.png);
+                        }
+                        .tit-icon-company{
+                            background-image: url(../../assets/icon/company_icon.png);
                         }
                     }
                     .tit-total{
@@ -86,12 +93,25 @@ page-report {
                 .report-list{
                     .report-list-li{
                         border-top: 1px solid #EAE9F2;
+                        margin-bottom:15px;
                         .re-p{
                             font-size: r(28);
                             color: #4F4F6F;
                             line-height: 40px;
                         }
                         .re-num{
+                            .re-num-i:nth-child(2){
+                                float: right;
+                            }
+                            .re-num-i:nth-child(n+3){
+                                margin-top:15px;
+                            }
+                            .re-num-i:nth-last-child(1){
+                                margin-bottom:15px;
+                            }
+                            .re-num-i:nth-last-child(2){
+                                margin-bottom:15px;
+                            }
                             .re-num-i{
                                 float: left;
                                 width:45%;
@@ -106,8 +126,13 @@ page-report {
                                     }
                                     .i-n-p{
                                         font-size: r(22);
-                                        color: #F1453D;
                                         margin-left:5px;
+                                    }
+                                    .i-up{
+                                        color: #F1453D;
+                                    }
+                                    .i-down{
+                                        color: #00E676;
                                     }
                                 }
                                 .i-b{
@@ -115,9 +140,7 @@ page-report {
                                     color: #88889C;
                                     line-height: 32px;
                                 }
-                            }
-                            .re-num-i-right{
-                                float: right;
+                                
                             }
                         }
                     }
