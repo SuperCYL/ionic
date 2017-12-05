@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import $ from 'jquery';
 
+import { ReportProvider } from "../../providers/report/report"
+
 /**
  * Generated class for the ReportPage page.
  *
@@ -16,7 +18,7 @@ import $ from 'jquery';
 })
 export class ReportPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams,private reportProvider:ReportProvider) {
   }
 
   ionViewDidLoad() {
@@ -29,6 +31,8 @@ export class ReportPage {
           $(this).addClass('tab-active');
           $(this).siblings('li').removeClass('tab-active');
       }
-    })
+    });
+
+    this.reportProvider.doLogin("admin", "3E2D3E1D3D300F");
   }
 }

@@ -13,14 +13,15 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { MyApp } from './app.component';
 
 import { LoginPage } from '../pages/login/login'
-import { LoginProvider } from '../providers/login/login';
-
 import { AboutPage } from '../pages/about/about';
 import { ContactPage } from '../pages/contact/contact';
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
 import { SettingPage } from '../pages/setting/setting';
 import { ReportPage } from '../pages/report/report';
+
+import { LoginProvider } from '../providers/login/login';
+import { ReportProvider } from '../providers/report/report';
 
 import { ProviderHelper } from "../providers/helper/ProviderHelper";
 import { TranslateHelper } from "../providers/helper/TranslateHelper";
@@ -74,7 +75,8 @@ export function createTranslateLoader(http: HttpClient) {
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     TranslateHelper,
     ProviderHelper,
-    LoginProvider
+    LoginProvider,
+    ReportProvider
   ]
 })
 export class AppModule {}
