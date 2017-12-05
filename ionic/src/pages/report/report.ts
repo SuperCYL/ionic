@@ -22,8 +22,11 @@ export class ReportPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad ReportPage');
     $("#reportTab li").click(function(){
-      console.log("22222222222")
+      var isActive = $(this).hasClass('tab-active');
+      if(isActive === false){
+          $(this).addClass('tab-active');
+          $(this).siblings('li').removeClass('tab-active');
+      }
     })
   }
-
 }
