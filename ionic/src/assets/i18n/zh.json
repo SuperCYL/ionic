@@ -46,5 +46,12 @@
     "label" : {
       "remember": "Remember password"
     }
+  },
+  "report": {
+    "LastWeek": "Last Week",
+    "LastMonth": "Last Month",
+    "Country": "Country",
+    "Region":"Region",
+    "Total":"Total"
   }
 }

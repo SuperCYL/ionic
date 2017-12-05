@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import $ from 'jquery';
+import {TranslateHelper} from "../../providers/helper/TranslateHelper";
 
 /**
  * Generated class for the ReportPage page.
@@ -16,7 +17,7 @@ import $ from 'jquery';
 })
 export class ReportPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private translate:TranslateHelper) {
   }
 
   ionViewDidLoad() {
@@ -26,6 +27,13 @@ export class ReportPage {
       if(isActive === false){
           $(this).addClass('tab-active');
           $(this).siblings('li').removeClass('tab-active');
+      }
+      var text = $(this).text();
+      if(text == 'Last Week'){
+        $(".pg-tit").html("Heat Map in the Last Week")
+      }
+      if(text == 'Last Month'){
+        $(".pg-tit").html("Heat Map in the Last Month")
       }
     })
   }
