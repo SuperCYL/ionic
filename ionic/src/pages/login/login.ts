@@ -1,13 +1,12 @@
 import { Component } from '@angular/core';
 import { IonicPage, ModalController} from 'ionic-angular';
 import { TabsPage } from "../tabs/tabs";
-// import { LoginService } from "./loginService"
+
 
 @IonicPage()
 @Component({
   selector: 'page-login',
   templateUrl: 'login.html',
-  // providers: [LoginService]
 })
 export class LoginPage {
   userinfo;
@@ -26,9 +25,6 @@ export class LoginPage {
     } else {
       let userinfo: string = '用户名：' + username.value + '密码：' + password.value;
       alert(userinfo);
-      // this.loginService.getUser().then(res=>{
-      //   this.userinfo = res.data;
-      // })
       let modal = this.modalCtrl.create(TabsPage);
       modal.present();
     }

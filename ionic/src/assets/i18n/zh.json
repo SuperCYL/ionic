@@ -1,0 +1,50 @@
+{
+  "common": {
+    "text": {
+      "title": "提示",
+      "password": ""
+    },
+    "confirm": {
+      "username": "请输入用户名",
+      "password": "请输入密码"
+    },
+    "button": {
+      "ok": "确定"
+    },
+    "label": {
+      "enter": "Please enter",
+      "select": "Please select"
+    }
+  },
+  "Login": {
+    "login": "登录",
+    "username": "用户名",
+    "password": "密码",
+    "loginOut": "退出",
+    "placeholder" : {
+      "username": "请输入用户名",
+      "password": "请输入密码"
+    },
+    "label" : {
+      "remember": "记住密码"
+    }
+  },
+  "home": {
+    "Upload sales":"Upload sales",
+    "Performance":"Performance",
+    "Check Inventory":"Check Inventory",
+    "Upload Inventory":"Upload Inventory"
+  },
+  "shop": {
+    "title": "新建店铺",
+    "username": "Username",
+    "password": "Password",
+    "placeholder" : {
+      "password": "Pls input the password",
+      "username": "Pls input the username"
+    },
+    "label" : {
+      "remember": "Remember password"
+    }
+  }
+}

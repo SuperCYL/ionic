@@ -1,0 +1,39 @@
+{
+  "common": {
+    "text": {
+      "title": "Info",
+      "password": ""
+    },
+    "confirm": {
+      "username": "Pls input the username",
+      "password": "Pls input the password"
+    },
+    "button": {
+      "ok": "OK"
+    }
+  },
+  "Login": {
+    "login": "Login",
+    "username": "Username",
+    "password": "Password",
+    "placeholder" : {
+      "password": "Pls input the password",
+      "username": "Pls input the username"
+    },
+    "label" : {
+      "remember": "Remember password"
+    }
+  },
+  "shop": {
+    "title": "New Shop",
+    "username": "Username",
+    "password": "Password",
+    "placeholder" : {
+      "password": "Pls input the password",
+      "username": "Pls input the username"
+    },
+    "label" : {
+      "remember": "Remember password"
+    }
+  }
+}
