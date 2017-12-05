@@ -21,7 +21,7 @@ export class ReportPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad ReportPage');
-    $(".report-header li").click(function(){
+    $("#reportTab li").click(function(){
       console.log("22222222222")
     })
   }
