@@ -4,7 +4,7 @@
 import { Injectable } from '@angular/core';
 import {Http, Headers, RequestMethod, Response, RequestOptionsArgs} from '@angular/http';
 import 'rxjs/add/operator/map';
-import 'rxjs/add/operator/catch'
+import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/toPromise';
 import {LoadingController} from "ionic-angular";
 

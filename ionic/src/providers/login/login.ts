@@ -11,7 +11,7 @@ import {ProviderHelper} from "../helper/ProviderHelper";
 export class LoginProvider {
 
   constructor(public helper: ProviderHelper) {
-    console.log('Hello LoginProvider Provider');
+    //console.log('Hello LoginProvider Provider');
   }
 
   async getEncryptPassword(password:string):Promise<any> {

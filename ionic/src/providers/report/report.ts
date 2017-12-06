@@ -11,16 +11,12 @@ import {ProviderHelper} from "../helper/ProviderHelper";
 export class ReportProvider {
 
   constructor(public helper: ProviderHelper) {
-    console.log('Hello LoginProvider Provider');
-  }
-
-  async getEncryptPassword(password:string):Promise<any> {
-    let res = await this.helper.request(`${this.helper.baseUrl}user/encrypt?key=${password}`);
-    return res;
+    
   }
 
   async doLogin(username:string, password:string) :Promise<any> {
-      return await this.helper.request(`${this.helper.baseUrl}user/login?userCode=${username}&password=${password}`);
+      let res = await this.helper.request(`${this.helper.baseUrl}user/login?userCode=${username}&password=${password}`);
+      return res;
   }
 
 }

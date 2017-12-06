@@ -17,12 +17,10 @@ import { ReportProvider } from "../../providers/report/report"
   templateUrl: 'report.html',
 })
 export class ReportPage {
-
   constructor(public navCtrl: NavController, public navParams: NavParams,private reportProvider:ReportProvider) {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad ReportPage');
     $("#reportTab li").click(function(){
       var isActive = $(this).hasClass('tab-active');
       var text = $(this).text();
@@ -33,6 +31,7 @@ export class ReportPage {
       }
     });
 
-    this.reportProvider.doLogin("admin", "3E2D3E1D3D300F");
+    let re = this.reportProvider.doLogin("admin", "3E2D3E1D3D300F");
+    console.log(re);
   }
 }
