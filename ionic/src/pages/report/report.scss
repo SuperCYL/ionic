@@ -1,4 +1,5 @@
 page-report {
+    font-family: PingFangSC-Regular;
     .report-header{
         width: 100%;
         height: 54px;
@@ -30,7 +31,7 @@ page-report {
                 line-height: 25px;
                 float: left;
                 color: #35B7F3;
-                font-size: r(24)
+                font-size: r(24);
             }
         }
     }
@@ -57,7 +58,7 @@ page-report {
             background-color: #ffffff;
             .report-item-center{
                 width:85%;
-                margin:0 auto;
+                margin:0 auto 15px;
                 .report-item-tit{
                     line-height: 40px;
                     li{
@@ -96,24 +97,15 @@ page-report {
                 .report-list{
                     .report-list-li{
                         border-top: 1px solid #EAE9F2;
-                        margin-bottom:15px;
+                        padding-bottom:15px;
                         .re-p{
                             font-size: r(28);
                             color: #4F4F6F;
-                            line-height: 40px;
+                            padding-top:15px;
                         }
                         .re-num{
                             .re-num-i:nth-child(2){
                                 float: right;
-                            }
-                            .re-num-i:nth-child(n+3){
-                                margin-top:15px;
-                            }
-                            .re-num-i:nth-last-child(1){
-                                margin-bottom:15px;
-                            }
-                            .re-num-i:nth-last-child(2){
-                                margin-bottom:15px;
                             }
                             .re-num-i{
                                 float: left;
@@ -122,6 +114,7 @@ page-report {
                                 border-radius: r(8);
                                 text-align: center;
                                 padding:13px 0;
+                                margin-top:15px;
                                 .i-n{
                                     .i-n-l{
                                         font-size: r(40);
