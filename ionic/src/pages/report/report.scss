@@ -13,6 +13,7 @@ page-report {
             top:50%;
             margin-top:r(-42)/2;
             margin-left:10px;
+            background-repeat: no-repeat;
         }
         ul{
             display: inline-block;
@@ -22,13 +23,14 @@ page-report {
             position: absolute;
             top: 50%;
             left: 50%;
-            margin-top: -13.5px;
+            margin-top: -12.5px;
             margin-left: -90px;
             li{
                 width:90px;
-                line-height: 27px;
+                line-height: 25px;
                 float: left;
                 color: #35B7F3;
+                font-size: r(24)
             }
         }
     }
@@ -66,7 +68,7 @@ page-report {
                         color: #4F4F6F;
                     }
                     .tit-name{
-                        padding-left: 25px;
+                        padding-left: 26px;
                         .tit-icon{
                             width: r(42);
                             height: r(42);
@@ -74,7 +76,8 @@ page-report {
                             display: inline-block;
                             position: absolute;
                             left: 0;
-                            top:10px;
+                            top:8px;
+                            background-repeat: no-repeat;
                         }
                         .tit-icon-country{
                             background-image: url(../../assets/icon/country_icon.png);
@@ -118,8 +121,8 @@ page-report {
                                 background: #F6FAFF;
                                 border-radius: r(8);
                                 text-align: center;
+                                padding:13px 0;
                                 .i-n{
-                                    line-height: 40px;
                                     .i-n-l{
                                         font-size: r(40);
                                         color: #4F4F6F;
@@ -136,9 +139,9 @@ page-report {
                                     }
                                 }
                                 .i-b{
-                                    font-size: r(22);
+                                    font-size: r(23);
                                     color: #88889C;
-                                    line-height: 32px;
+                                    margin-top:5px;
                                 }
                                 
                             }

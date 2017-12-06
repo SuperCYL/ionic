@@ -40,7 +40,7 @@ ul li{
 }
 /*px-rem换算*/
 @function r($px) {
-    @return $px / 32 * 1rem;
+    @return $px / 22 * 1rem;
 }
 /*tab选中样式*/
 .tab-active{
