@@ -14,8 +14,8 @@ export class ReportProvider {
     
   }
 
-  async doLogin(username:string, password:string) :Promise<any> {
-      let res = await this.helper.request(`${this.helper.baseUrl}user/login?userCode=${username}&password=${password}`);
+  async getCountrySales(mode:string) :Promise<any> {
+      let res = await this.helper.request(`${this.helper.baseUrl}enterSellWater/getCountrySales?mode=${mode}`);
       return res;
   }
 

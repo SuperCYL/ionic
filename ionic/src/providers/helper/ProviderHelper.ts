@@ -10,8 +10,8 @@ import {LoadingController} from "ionic-angular";
 
 @Injectable()
 export class ProviderHelper {
-  public baseUrl = 'http://10.250.117.4/';
-
+  // public baseUrl = 'http://10.250.117.4/';
+  public baseUrl = 'http://10.151.17.108:9101/v1/';
   constructor(public http: Http, public loadingCtrl: LoadingController) {
     console.log('Hello Provider');
   }
@@ -28,7 +28,7 @@ export class ProviderHelper {
     let headers = new Headers();
 
     headers.append('content-type', 'application/json');
-
+    auth = "eyJhbGciOiJIUzI1NiIsImNhbGciOiJHWklQIn0.H4sIAAAAAAAAAKtWKi5NUrJSMjA0szBR0lFKrShQsjI0NTQ2NDUxMDWoBQBHoJQDIAAAAA.Vf_4S4wwbqb6uqIwprQ1T0v6LpdoMAO38AJ5v5tHoJI";
     if(auth)
       headers.append('Authorization', auth);
 

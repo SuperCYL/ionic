@@ -17,6 +17,7 @@ import { ReportProvider } from "../../providers/report/report"
   templateUrl: 'report.html',
 })
 export class ReportPage {
+  menuList;
   constructor(public navCtrl: NavController, public navParams: NavParams,private reportProvider:ReportProvider) {
   }
 
@@ -30,8 +31,10 @@ export class ReportPage {
           $(this).siblings('li').removeClass('tab-active');
       }
     });
-
-    let re = this.reportProvider.doLogin("admin", "3E2D3E1D3D300F");
-    console.log(re);
+    let mode = "week";
+    
+    let data = this.reportProvider.getCountrySales(mode);
+    this.menuList = data;
+    console.log(data);
   }
 }
