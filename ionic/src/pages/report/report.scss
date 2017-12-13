@@ -48,6 +48,7 @@ page-report {
             font-size: r(28);
             color: #F2F4F7;
             padding-left: 20px;
+            z-index: 999;
         }
     }
     .report-cont{
@@ -123,6 +124,9 @@ page-report {
                                     .i-n-p{
                                         font-size: r(22);
                                         margin-left:5px;
+                                        i{
+                                            font-style: normal;
+                                        }
                                     }
                                     .i-up{
                                         color: #F1453D;

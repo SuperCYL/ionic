@@ -17,7 +17,8 @@
 <ion-content>
   <div class="report-pg">
     <div class="pg-tit">{{'report.mapTit' | translate}} <span>Last Week</span></div>
-    <img src="../../assets/icon/map.png" />
+    <!-- <img src="../../assets/icon/map.png" /> -->
+    <div id="AfricaMap"></div>
   </div>
   <div class="report-cont">
     <!-- country-->
@@ -37,7 +38,11 @@
               <li class="re-num-i" *ngFor="let enterprise of country.enterpriseTypes">
                 <p class="i-n">
                   <span class="i-n-l">{{enterprise.salesTotal}}</span>
-                  <span class="i-n-p i-up">{{enterprise.proportion}}<samp *ngIf="enterprise.proportion > 0">↑</samp><samp *ngIf="enterprise.proportion < 0">↓</samp></span>
+                  <span class="i-n-p" [style.color]="enterprise.proportion > 0 ? '#F1453D' : '#00E676'">
+                    {{ enterprise.proportion }}
+                    <i *ngIf="enterprise.proportion > 0">↑</i>
+                    <i *ngIf="enterprise.proportion < 0">↓</i>
+                  </span>
                 </p>
                 <p class="i-b">{{enterprise.enterpriseTypeName}}</p>
               </li>
