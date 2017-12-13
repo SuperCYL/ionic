@@ -28,7 +28,7 @@ export class ProviderHelper {
     let headers = new Headers();
 
     headers.append('content-type', 'application/json');
-    auth = "eyJhbGciOiJIUzI1NiIsImNhbGciOiJHWklQIn0.H4sIAAAAAAAAAKtWKi5NUrJSMjA0szBR0lFKrShQsjI0NTQ2NDUxMDWoBQBHoJQDIAAAAA.Vf_4S4wwbqb6uqIwprQ1T0v6LpdoMAO38AJ5v5tHoJI";
+    auth = "eyJhbGciOiJIUzI1NiIsImNhbGciOiJHWklQIn0.H4sIAAAAAAAAAKtWKi5NUrJSMjA0szBR0lFKrShQsjI0NTQ2MjIAgloASe4y3CAAAAA.oP-bD0hpUgSvbSWGT-4pMorNnKf4EIzoxwU0D7NcWlI";
     if(auth)
       headers.append('Authorization', auth);
 
@@ -48,7 +48,6 @@ export class ProviderHelper {
               loader = null;
             }
           }
-
           return await res.json() || ''
         }catch (e){
           if(showLoading) {

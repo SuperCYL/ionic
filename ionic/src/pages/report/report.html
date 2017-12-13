@@ -26,58 +26,23 @@
         <!-- country tit -->
         <ul class="report-item-tit clearbox">
           <li class="tit-name"><span class="tit-icon tit-icon-country"></span>{{'report.Country' | translate}}</li>
-          <li class="tit-total">{{'report.Total' | translate}}: 300/500</li>
+          <li class="tit-total">{{'report.Total' | translate}}: {{countryTotal}}</li>
         </ul>
         <!-- country tit end -->
         <!-- country cont -->
         <ul class="report-list">
-          <li class="report-list-li">
-            <p class="re-p">New Caledonia</p>
+          <li class="report-list-li" *ngFor="let country of countryList" >
+            <p class="re-p">{{country.name}}</p>
             <ul class="re-num clearbox">
-              <li class="re-num-i">
+              <li class="re-num-i" *ngFor="let enterprise of country.enterpriseTypes">
                 <p class="i-n">
-                  <span class="i-n-l">185</span>
-                  <span class="i-n-p i-up">20%↑</span>
+                  <span class="i-n-l">{{enterprise.salesTotal}}</span>
+                  <span class="i-n-p i-up">{{enterprise.proportion}}<samp *ngIf="enterprise.proportion > 0">↑</samp><samp *ngIf="enterprise.proportion < 0">↓</samp></span>
                 </p>
-                <p class="i-b">ND-Distributor</p>
-              </li>
-              <li class="re-num-i">
-                  <p class="i-n">
-                      <span class="i-n-l">402</span>
-                      <span class="i-n-p i-up">20%↑</span>
-                    </p>
-                    <p class="i-b">Sub-Dealer</p>
+                <p class="i-b">{{enterprise.enterpriseTypeName}}</p>
               </li>
             </ul>
           </li>
-
-          <li class="report-list-li">
-              <p class="re-p">Seychelles</p>
-              <ul class="re-num clearbox">
-                <li class="re-num-i">
-                  <p class="i-n">
-                    <span class="i-n-l">986</span>
-                    <span class="i-n-p i-up">20%↑</span>
-                  </p>
-                  <p class="i-b">ND-Distributor</p>
-                </li>
-                <li class="re-num-i">
-                    <p class="i-n">
-                      <span class="i-n-l">841</span>
-                      <span class="i-n-p i-down">38%↓</span>
-                    </p>
-                    <p class="i-b">Sub-Dealer</p>
-                </li>
-                <li class="re-num-i">
-                    <p class="i-n">
-                      <span class="i-n-l">841</span>
-                      <span class="i-n-p i-down">38%↓</span>
-                    </p>
-                    <p class="i-b">Third Dealer</p>
-                </li>
-              </ul>
-            </li>
-
         </ul>
         <!-- country cont end-->
       </div>

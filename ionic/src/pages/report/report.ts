@@ -17,11 +17,12 @@ import { ReportProvider } from "../../providers/report/report"
   templateUrl: 'report.html',
 })
 export class ReportPage {
-  menuList;
+   countryList;
+   countryTotal;
   constructor(public navCtrl: NavController, public navParams: NavParams,private reportProvider:ReportProvider) {
   }
 
-  ionViewDidLoad() {
+  async ionViewDidLoad() {
     $("#reportTab li").click(function(){
       var isActive = $(this).hasClass('tab-active');
       var text = $(this).text();
@@ -33,8 +34,10 @@ export class ReportPage {
     });
     let mode = "week";
     
-    let data = this.reportProvider.getCountrySales(mode);
-    this.menuList = data;
-    console.log(data);
+    await this.reportProvider.getCountrySales(mode).then((data) => {
+      this.countryList = data["list"];
+      this.countryTotal = data["total"].join("/");
+    });
+    
   }
 }
