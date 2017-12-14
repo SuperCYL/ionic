@@ -19,4 +19,13 @@ export class ReportProvider {
       return res;
   }
 
+  async getAreaSales(mode:string) :Promise<any> {
+    let res = await this.helper.request(`${this.helper.baseUrl}enterSellWater/getAreaSales?mode=${mode}`);
+    return res;
+  }
+
+  async getCompanySales(mode:string) :Promise<any> {
+    let res = await this.helper.request(`${this.helper.baseUrl}enterSellWater/getCompanySales?mode=${mode}`);
+    return res;
+  }
 }

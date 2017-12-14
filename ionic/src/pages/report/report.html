@@ -8,8 +8,8 @@
   <div class="report-header clearbox">
     <div class="back-icon"></div>
     <ul class="clearbox" id="reportTab">
-      <li class="tab-active">{{'report.LastWeek' | translate}}</li>
-      <li>{{'report.LastMonth' | translate}}</li>
+      <li class="tab-active" dateType="w">{{'report.LastWeek' | translate}}</li>
+      <li dateType="m">{{'report.LastMonth' | translate}}</li>
     </ul>
   </div>
 </ion-header>
@@ -60,58 +60,27 @@
         <!-- Region tit -->
         <ul class="report-item-tit clearbox">
           <li class="tit-name"><span class="tit-icon tit-icon-region"></span>{{'report.Region' | translate}}</li>
-          <li class="tit-total">{{'report.Total' | translate}}: 300/500</li>
+          <li class="tit-total">{{'report.Total' | translate}}: {{regionTotal}}</li>
         </ul>
         <!-- Region tit end -->
         <!-- Region cont -->
         <ul class="report-list">
-          <li class="report-list-li">
-            <p class="re-p">New Caledonia</p>
+          <li class="report-list-li" *ngFor="let region of regionList" >
+            <p class="re-p">{{region.name}}</p>
             <ul class="re-num clearbox">
-              <li class="re-num-i">
+              <li class="re-num-i" *ngFor="let enterprise of region.enterpriseTypes">
                 <p class="i-n">
-                  <span class="i-n-l">185</span>
-                  <span class="i-n-p i-up">20%↑</span>
+                  <span class="i-n-l">{{enterprise.salesTotal}}</span>
+                  <span class="i-n-p" [style.color]="enterprise.proportion > 0 ? '#F1453D' : '#00E676'">
+                    {{ enterprise.proportion }}
+                    <i *ngIf="enterprise.proportion > 0">↑</i>
+                    <i *ngIf="enterprise.proportion < 0">↓</i>
+                  </span>
                 </p>
-                <p class="i-b">ND-Distributor</p>
-              </li>
-              <li class="re-num-i">
-                  <p class="i-n">
-                      <span class="i-n-l">402</span>
-                      <span class="i-n-p i-up">20%↑</span>
-                    </p>
-                    <p class="i-b">Sub-Dealer</p>
+                <p class="i-b">{{enterprise.enterpriseTypeName}}</p>
               </li>
             </ul>
           </li>
-
-          <li class="report-list-li">
-              <p class="re-p">Seychelles</p>
-              <ul class="re-num clearbox">
-                <li class="re-num-i">
-                  <p class="i-n">
-                    <span class="i-n-l">986</span>
-                    <span class="i-n-p i-up">20%↑</span>
-                  </p>
-                  <p class="i-b">ND-Distributor</p>
-                </li>
-                <li class="re-num-i">
-                    <p class="i-n">
-                      <span class="i-n-l">841</span>
-                      <span class="i-n-p i-down">38%↓</span>
-                    </p>
-                    <p class="i-b">Sub-Dealer</p>
-                </li>
-                <li class="re-num-i">
-                    <p class="i-n">
-                      <span class="i-n-l">841</span>
-                      <span class="i-n-p i-down">38%↓</span>
-                    </p>
-                    <p class="i-b">Third Dealer</p>
-                </li>
-              </ul>
-            </li>
-
         </ul>
         <!-- Region cont end-->
       </div>
@@ -123,59 +92,27 @@
         <div class="report-item-center"> 
           <!-- company tit -->
           <ul class="report-item-tit clearbox">
-            <li class="tit-name"><span class="tit-icon tit-icon-company"></span>TECNO</li>
+            <li class="tit-name"><span class="tit-icon tit-icon-company"></span>{{companyName}}</li>
             <li class="tit-total">{{'report.Total' | translate}}: 300/500</li>
           </ul>
           <!-- company tit end -->
           <!-- company cont -->
           <ul class="report-list">
             <li class="report-list-li">
-              <p class="re-p">New Caledonia</p>
               <ul class="re-num clearbox">
-                <li class="re-num-i">
+                <li class="re-num-i" *ngFor="let company of companyList">
                   <p class="i-n">
-                    <span class="i-n-l">185</span>
-                    <span class="i-n-p i-up">20%↑</span>
+                    <span class="i-n-l">{{company.salesTotal}}</span>
+                    <span class="i-n-p" [style.color]="company.proportion > 0 ? '#F1453D' : '#00E676'">
+                      {{ company.proportion }}
+                      <i *ngIf="company.proportion > 0">↑</i>
+                      <i *ngIf="company.proportion < 0">↓</i>
+                    </span>
                   </p>
-                  <p class="i-b">ND-Distributor</p>
-                </li>
-                <li class="re-num-i">
-                    <p class="i-n">
-                        <span class="i-n-l">402</span>
-                        <span class="i-n-p i-up">20%↑</span>
-                      </p>
-                      <p class="i-b">Sub-Dealer</p>
+                  <p class="i-b">{{company.enterpriseTypeName}}</p>
                 </li>
               </ul>
             </li>
-  
-            <li class="report-list-li">
-                <p class="re-p">Seychelles</p>
-                <ul class="re-num clearbox">
-                  <li class="re-num-i">
-                    <p class="i-n">
-                      <span class="i-n-l">986</span>
-                      <span class="i-n-p i-up">20%↑</span>
-                    </p>
-                    <p class="i-b">ND-Distributor</p>
-                  </li>
-                  <li class="re-num-i">
-                      <p class="i-n">
-                        <span class="i-n-l">841</span>
-                        <span class="i-n-p i-down">38%↓</span>
-                      </p>
-                      <p class="i-b">Sub-Dealer</p>
-                  </li>
-                  <li class="re-num-i">
-                      <p class="i-n">
-                        <span class="i-n-l">841</span>
-                        <span class="i-n-p i-down">38%↓</span>
-                      </p>
-                      <p class="i-b">Third Dealer</p>
-                  </li>
-                </ul>
-              </li>
-  
           </ul>
           <!-- company cont end-->
         </div>
