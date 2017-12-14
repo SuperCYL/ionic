@@ -47,7 +47,7 @@ export class ReportPage {
   }
 
   async getMapData() {
-    var chart = Highcharts.chart('AfricaMap', {
+    Highcharts.chart('AfricaMap', {
         title: {
             text: '不同城市的月平均气温',
             x: -20
