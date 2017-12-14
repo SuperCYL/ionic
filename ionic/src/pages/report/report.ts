@@ -61,9 +61,6 @@ export class ReportPage {
         title : {
           text : "非洲"
         },
-        subtitle : {
-          text : '地图数据： <a href="https://img.hcharts.cn/mapdata/index.html">非洲</a>'
-        },
         mapNavigation: {
           enabled: true,
           buttonOptions: {
