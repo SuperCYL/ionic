@@ -26,25 +26,37 @@ export class ReportPage {
    companyList;
    companyTotal;
    companyName;
+   
   constructor(public navCtrl: NavController, public navParams: NavParams,private reportProvider:ReportProvider) {
   }
 
    ionViewDidLoad() {
-    
-    this.getCountryList("week");
-    this.getRegionList("week");
-    this.getCompanyList("week");
+    let that = this;
+    let mode = "week";
+    this.getCountryList(mode);
+    this.getRegionList(mode);
+    this.getCompanyList(mode);
     this.getMapData();
     
     $("#reportTab li").click(function(){
-      var isActive = $(this).hasClass('tab-active');
-      var text = $(this).text();
+      let isActive = $(this).hasClass('tab-active');
+      let text = $(this).text();
       $(".pg-tit span").html(text);
       if(isActive === false){
           $(this).addClass('tab-active');
           $(this).siblings('li').removeClass('tab-active');
       }
+    let dateType = $(this).attr("dateType");
      
+     if(dateType == "w"){
+        mode = "week";
+     }
+     if(dateType == "m"){
+        mode = "month";
+     }
+     that.getCountryList(mode);
+     that.getRegionList(mode);
+     that.getCompanyList(mode)
     });
     
   }
