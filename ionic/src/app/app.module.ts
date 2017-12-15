@@ -25,6 +25,7 @@ import { ReportProvider } from '../providers/report/report';
 
 import { ProviderHelper } from "../providers/helper/ProviderHelper";
 import { TranslateHelper } from "../providers/helper/TranslateHelper";
+import { MapTs } from "../assets/js/map";
 
 
 
@@ -76,7 +77,8 @@ export function createTranslateLoader(http: HttpClient) {
     TranslateHelper,
     ProviderHelper,
     LoginProvider,
-    ReportProvider
+    ReportProvider,
+    MapTs
   ]
 })
 export class AppModule {}
