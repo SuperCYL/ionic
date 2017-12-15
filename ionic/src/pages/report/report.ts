@@ -2,7 +2,7 @@ import { Component} from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import * as Highcharts from 'highcharts/highmaps';
 import $ from 'jquery';
-
+import { TranslateHelper } from "../../providers/helper/TranslateHelper";
 import { ReportProvider } from "../../providers/report/report"
 import { MapTs } from "../../assets/js/map"
 
@@ -27,7 +27,7 @@ export class ReportPage {
    companyTotal;
    companyName;
    
-  constructor(public navCtrl: NavController, public navParams: NavParams,private reportProvider:ReportProvider,private mapTs:MapTs) {
+  constructor(public navCtrl: NavController, public navParams: NavParams,private reportProvider:ReportProvider,private mapTs:MapTs,private translate:TranslateHelper) {
   }
 
    ionViewDidLoad() {
@@ -36,7 +36,7 @@ export class ReportPage {
     this.getCountryList(mode);
     this.getRegionList(mode);
     this.getCompanyList(mode);
-    this.getMapData();
+    this.getMapData(mode);
     
     $("#reportTab li").click(function(){
       let isActive = $(this).hasClass('tab-active');
@@ -57,6 +57,7 @@ export class ReportPage {
      that.getCountryList(mode);
      that.getRegionList(mode);
      that.getCompanyList(mode)
+     that.getMapData(mode)
     });
     
   }
@@ -86,45 +87,44 @@ export class ReportPage {
     });
   }
 
-  async getMapData(){
-
-    let mapData = this.mapTs.maps;
-
-    let data = [{'hc-key': 'ss', value: 10000}, {'hc-key': 'cf', value: 70000}];
-    Highcharts.mapChart('AfricaMap', {
-        title : {
-          text : "非洲"
-        },
-        mapNavigation: {
-          enabled: true,
-          buttonOptions: {
-            verticalAlign: 'bottom'
-          }
-        },
-        colorAxis: {
-          min: 0,
-          stops: [
-            [0, '#ff5839'],
-            [0.5, Highcharts.getOptions().colors[0]],
-            [1, Highcharts.Color(Highcharts.getOptions().colors[0]).brighten(-0.5).get()]
-          ]
-        },
-        series : [{
-          data : data,
-          mapData: mapData,
-          joinBy: 'hc-key',
-          name: '销量',
-          states: {
-            hover: {
-              color: '#a4edba'
-            }
-          },
-          dataLabels: {
-            enabled: true,
-            format: '{point.name}'
-          }
-        }]
+  async getMapData(mode){
+      await this.reportProvider.getCountryOneLevelSales(mode).then((data) => {
+          console.log(data);
+        let mapData = this.mapTs.maps;
+        Highcharts.mapChart('AfricaMap', {
+            title : {
+              text : this.translate.translateI18n('report.title')
+            },
+            mapNavigation: {
+              enabled: true,
+              buttonOptions: {
+                verticalAlign: 'bottom'
+              }
+            },
+            colorAxis: {
+              min: 0,
+              stops: [
+                [0, '#ff5839'],
+                [0.5, Highcharts.getOptions().colors[0]],
+                [1, Highcharts.Color(Highcharts.getOptions().colors[0]).brighten(-0.5).get()]
+              ]
+            },
+            series : [{
+              data : data,
+              mapData: mapData,
+              joinBy: 'name',
+              name: 'sales',
+              states: {
+                hover: {
+                  color: '#a4edba'
+                }
+              },
+              dataLabels: {
+                enabled: true,
+                format: '{point.name}'
+              }
+            }]
+          });
       });
   }
- 
 }

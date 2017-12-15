@@ -28,7 +28,7 @@ export class ProviderHelper {
     let headers = new Headers();
 
     headers.append('content-type', 'application/json');
-    auth = "eyJhbGciOiJIUzI1NiIsImNhbGciOiJHWklQIn0.H4sIAAAAAAAAAKtWKi5NUrJSMjA0szBR0lFKrShQsjI0NTQ2NjC3NDCsBQAt5r7hIAAAAA.ebIi6OBjmthCEH70XF79ZT1rB2YU1fHj2AbzlqqN7_s";
+    auth = "eyJhbGciOiJIUzI1NiIsImNhbGciOiJHWklQIn0.H4sIAAAAAAAAAKtWKi5NUrJSMjA0szBR0lFKrShQsjI0NTQ2MTCyNDetBQBShNqNIAAAAA.gereRRBFHWtCxOkshTZlqCh3NBYm6fgLnlCg-47TtMM";
     if(auth)
       headers.append('Authorization', auth);
 

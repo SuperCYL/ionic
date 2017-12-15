@@ -28,4 +28,9 @@ export class ReportProvider {
     let res = await this.helper.request(`${this.helper.baseUrl}enterSellWater/getCompanySales?mode=${mode}`);
     return res;
   }
+
+  async getCountryOneLevelSales(mode:string) :Promise<any> {
+    let res = await this.helper.request(`${this.helper.baseUrl}enterSellWater/getCountryOneLevelSales?mode=${mode}`);
+    return res;
+  }
 }
