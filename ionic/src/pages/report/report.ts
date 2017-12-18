@@ -29,7 +29,6 @@ export class ReportPage {
    
   constructor(public navCtrl: NavController, public navParams: NavParams,private reportProvider:ReportProvider,private mapTs:MapTs,private translate:TranslateHelper) {
   }
-// 初始化数据加载
    ionViewDidLoad() {
     let that = this;
     let mode = "week";
@@ -61,7 +60,6 @@ export class ReportPage {
     });
     
   }
-// 获取国家销量
   async getCountryList(mode) {
     await this.reportProvider.getCountrySales(mode).then((data) => {
       this.countryList = data["list"];
@@ -69,7 +67,6 @@ export class ReportPage {
       console.log(this.countryTotal);
     });
   }
-// 获取区域销量
   async getRegionList(mode) {
     await this.reportProvider.getAreaSales(mode).then((data) => {
       this.regionList = data["list"];
@@ -77,7 +74,6 @@ export class ReportPage {
       console.log(this.regionTotal);
     });
   }
-// 获取事业部销量
   async getCompanyList(mode) {
     await this.reportProvider.getCompanySales(mode).then((data) => {
       this.companyList = data["list"][0]["enterpriseTypes"];
@@ -86,7 +82,6 @@ export class ReportPage {
       console.log(this.companyName);
     });
   }
-// 非洲地图
   async getMapData(mode){
       await this.reportProvider.getCountryOneLevelSales(mode).then((data) => {
           console.log(data);
