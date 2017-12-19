@@ -96,7 +96,7 @@ export class ReportPage {
     });
   }
   async getMapData(mode,showLoading=true){
-await this.reportProvider.getCountryOneLevelSales(mode, showLoading, this.token).then((data) => {
+    await this.reportProvider.getCountryOneLevelSales(mode, showLoading, this.token).then((data) => {
       let mapData = this.mapTs.maps;
       Highcharts.mapChart('AfricaMap', {
         title : {
