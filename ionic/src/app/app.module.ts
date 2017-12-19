@@ -27,7 +27,7 @@ import { ProviderHelper } from "../providers/helper/ProviderHelper";
 import { TranslateHelper } from "../providers/helper/TranslateHelper";
 import { MapTs } from "../assets/js/map";
 
-
+import { PipesModule } from "../pipes/pipes.module"
 
 
 export function createTranslateLoader(http: HttpClient) {
@@ -49,6 +49,7 @@ export function createTranslateLoader(http: HttpClient) {
     BrowserModule,
     HttpModule,
     HttpClientModule,
+    PipesModule,
     IonicModule.forRoot(MyApp),
     TranslateModule.forRoot({
       loader: {
