@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import {ProviderHelper} from "../helper/ProviderHelper";
-import { RequestMethod } from '../../../node_modules/_@angular_http@5.0.1@@angular/http/src/enums';
+import {RequestMethod} from "@angular/http";
 
 /*
   Generated class for the LoginProvider provider.
