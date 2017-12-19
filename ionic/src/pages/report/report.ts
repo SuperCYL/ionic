@@ -26,13 +26,14 @@ export class ReportPage {
    companyList;
    companyTotal;
    companyName;
-   token = "eyJhbGciOiJIUzI1NiIsImNhbGciOiJHWklQIn0.H4sIAAAAAAAAAKtWKi5NUrJSMjA0szBR0lFKrShQsjI0NTQ2MTCyNDetBQBShNqNIAAAAA.gereRRBFHWtCxOkshTZlqCh3NBYm6fgLnlCg-47TtMM";
+   
+   token = "eyJhbGciOiJIUzI1NiIsImNhbGciOiJHWklQIn0.H4sIAAAAAAAAAKtWKi5NUrJSMjA0szBR0lFKrShQsjI0NTQ2N7EwtzSvBQDD_GS1IAAAAA.AJoypDUTHW2aiW0bWATaMu3BNeolo_Y-yBQRMK_NYHc";
   constructor(public navCtrl: NavController, public navParams: NavParams,
     private reportProvider:ReportProvider,private mapTs:MapTs,private translate:TranslateHelper) {
+      
   }
    ionViewDidLoad() {
     let that = this;
-    
     let mode = "week";
     this.getCountryList(mode);
     this.getRegionList(mode);
@@ -40,6 +41,13 @@ export class ReportPage {
     this.getMapData(mode);
     
     $("#reportTab li").click(function(){
+      that.countryList = [];
+      that.countryTotal = "";
+      that.regionList = [];
+      that.regionTotal = "";
+      that.companyList = [];
+      that.companyTotal = "";
+      that.companyName = "";
       let isActive = $(this).hasClass('tab-active');
       let text = $(this).text();
       $(".pg-tit span").html(text);
@@ -64,64 +72,66 @@ export class ReportPage {
   }
   async getCountryList(mode,showLoading=true) {
     await this.reportProvider.getCountrySales(mode, showLoading, this.token).then((data) => {
-      this.countryList = data["list"];
-      this.countryTotal = data["total"].join("/");
-      console.log(this.countryTotal);
+      if(data){
+        this.countryList = data["list"];
+        this.countryTotal = data["total"].join("/");
+      }
     });
   }
   async getRegionList(mode,showLoading=true) {
     await this.reportProvider.getAreaSales(mode, showLoading, this.token).then((data) => {
-      this.regionList = data["list"];
-      this.regionTotal = data["total"].join("/");
-      console.log(this.regionTotal);
+      if(data){
+        this.regionList = data["list"];
+        this.regionTotal = data["total"].join("/");
+      }
     });
   }
   async getCompanyList(mode,showLoading=true) {
     await this.reportProvider.getCompanySales(mode, showLoading, this.token).then((data) => {
-      this.companyList = data["list"][0]["enterpriseTypes"];
-      this.companyName = data["list"][0]["name"];
-      this.companyTotal = data["total"].join("/");
-      console.log(this.companyName);
+      if(data["list"].length !== 0){
+        this.companyList = data["list"][0]["enterpriseTypes"];
+        this.companyName = data["list"][0]["name"];
+        this.companyTotal = data["total"].join("/");
+      }
     });
   }
   async getMapData(mode,showLoading=true){
-      await this.reportProvider.getCountryOneLevelSales(mode, showLoading, this.token).then((data) => {
-          console.log(data);
-        let mapData = this.mapTs.maps;
-        Highcharts.mapChart('AfricaMap', {
-            title : {
-              text : this.translate.translateI18n('report.title')
-            },
-            mapNavigation: {
-              enabled: true,
-              buttonOptions: {
-                verticalAlign: 'bottom'
-              }
-            },
-            colorAxis: {
-              min: 0,
-              stops: [
-                [0, '#ff5839'],
-                [0.5, Highcharts.getOptions().colors[0]],
-                [1, Highcharts.Color(Highcharts.getOptions().colors[0]).brighten(-0.5).get()]
-              ]
-            },
-            series : [{
-              data : data,
-              mapData: mapData,
-              joinBy: 'name',
-              name: 'sales',
-              states: {
-                hover: {
-                  color: '#a4edba'
-                }
-              },
-              dataLabels: {
-                enabled: true,
-                format: '{point.name}'
-              }
-            }]
-          });
+await this.reportProvider.getCountryOneLevelSales(mode, showLoading, this.token).then((data) => {
+      let mapData = this.mapTs.maps;
+      Highcharts.mapChart('AfricaMap', {
+        title : {
+          text : this.translate.translateI18n('report.title')
+        },
+        mapNavigation: {
+          enabled: true,
+          buttonOptions: {
+            verticalAlign: 'bottom'
+          }
+        },
+        colorAxis: {
+          min: 0,
+          stops: [
+            [0, '#ff5839'],
+            [0.5, Highcharts.getOptions().colors[0]],
+            [1, Highcharts.Color(Highcharts.getOptions().colors[0]).brighten(-0.5).get()]
+          ]
+        },
+        series : [{
+          data : data,
+          mapData: mapData,
+          joinBy: 'name',
+          name: 'sales',
+          states: {
+            hover: {
+              color: '#a4edba'
+            }
+          },
+          dataLabels: {
+            enabled: true,
+            format: '{point.name}'
+          }
+        }]
       });
+    });
   }
 }
