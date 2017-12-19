@@ -26,11 +26,13 @@ export class ReportPage {
    companyList;
    companyTotal;
    companyName;
-   
-  constructor(public navCtrl: NavController, public navParams: NavParams,private reportProvider:ReportProvider,private mapTs:MapTs,private translate:TranslateHelper) {
+   token = "eyJhbGciOiJIUzI1NiIsImNhbGciOiJHWklQIn0.H4sIAAAAAAAAAKtWKi5NUrJSMjA0szBR0lFKrShQsjI0NTQ2MTCyNDetBQBShNqNIAAAAA.gereRRBFHWtCxOkshTZlqCh3NBYm6fgLnlCg-47TtMM";
+  constructor(public navCtrl: NavController, public navParams: NavParams,
+    private reportProvider:ReportProvider,private mapTs:MapTs,private translate:TranslateHelper) {
   }
    ionViewDidLoad() {
     let that = this;
+    
     let mode = "week";
     this.getCountryList(mode);
     this.getRegionList(mode);
@@ -60,30 +62,30 @@ export class ReportPage {
     });
     
   }
-  async getCountryList(mode) {
-    await this.reportProvider.getCountrySales(mode).then((data) => {
+  async getCountryList(mode,showLoading=true) {
+    await this.reportProvider.getCountrySales(mode, showLoading, this.token).then((data) => {
       this.countryList = data["list"];
       this.countryTotal = data["total"].join("/");
       console.log(this.countryTotal);
     });
   }
-  async getRegionList(mode) {
-    await this.reportProvider.getAreaSales(mode).then((data) => {
+  async getRegionList(mode,showLoading=true) {
+    await this.reportProvider.getAreaSales(mode, showLoading, this.token).then((data) => {
       this.regionList = data["list"];
       this.regionTotal = data["total"].join("/");
       console.log(this.regionTotal);
     });
   }
-  async getCompanyList(mode) {
-    await this.reportProvider.getCompanySales(mode).then((data) => {
+  async getCompanyList(mode,showLoading=true) {
+    await this.reportProvider.getCompanySales(mode, showLoading, this.token).then((data) => {
       this.companyList = data["list"][0]["enterpriseTypes"];
       this.companyName = data["list"][0]["name"];
       this.companyTotal = data["total"].join("/");
       console.log(this.companyName);
     });
   }
-  async getMapData(mode){
-      await this.reportProvider.getCountryOneLevelSales(mode).then((data) => {
+  async getMapData(mode,showLoading=true){
+      await this.reportProvider.getCountryOneLevelSales(mode, showLoading, this.token).then((data) => {
           console.log(data);
         let mapData = this.mapTs.maps;
         Highcharts.mapChart('AfricaMap', {
