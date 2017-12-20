@@ -1,10 +1,12 @@
 page-report {
     font-family: PingFangSC-Regular;
+    background: #88889C;
     .report-header{
         width: 100%;
         height: 54px;
         position: relative;
         text-align: center;
+        background: #fff;
         .back-icon{
             width: r(42);
             height:r(42);
@@ -35,117 +37,128 @@ page-report {
             }
         }
     }
-    .report-pg{
-        width:100%;
-        position: relative;
-        .pg-tit{
-            position: absolute;
-            top:0;
-            left:0;
-            right:0;
-            line-height: 42px;
-            background: rgba(0,0,0,0.48);
-            font-size: r(28);
-            color: #F2F4F7;
-            padding-left: 20px;
-            z-index: 999;
-        }
-    }
-    .report-cont{
-        width: 100%;
-        background-color: #F2F4F7;
-        .report-item{
+    .content-md{
+        background: #F2F4F7;
+        .report-pg{
             width:100%;
-            background-color: #ffffff;
-            .report-item-center{
-                width:85%;
-                margin:0 auto 15px;
-                .report-item-tit{
-                    line-height: 40px;
-                    li{
-                        width:50%;
-                        float: left;
-                        position: relative;
-                        font-size: r(28);
-                        color: #4F4F6F;
-                    }
-                    .tit-name{
-                        padding-left: 26px;
-                        .tit-icon{
-                            width: r(42);
-                            height: r(42);
-                            background-size: 100%;
-                            display: inline-block;
-                            position: absolute;
-                            left: 0;
-                            top:8px;
-                            background-repeat: no-repeat;
-                        }
-                        .tit-icon-country{
-                            background-image: url(../../assets/icon/country_icon.png);
-                        }
-                        .tit-icon-region{
-                            background-image: url(../../assets/icon/region_icon.png);
-                        }
-                        .tit-icon-company{
-                            background-image: url(../../assets/icon/company_icon.png);
-                        }
-                    }
-                    .tit-total{
-                        text-align: right;
-                    }
-                }
-                .report-list{
-                    .report-list-li{
-                        border-top: 1px solid #EAE9F2;
-                        padding-bottom:15px;
-                        .re-p{
+            position: relative;
+            .pg-tit{
+                position: absolute;
+                top:0;
+                left:0;
+                right:0;
+                line-height: 42px;
+                background: rgba(0,0,0,0.48);
+                font-size: r(28);
+                color: #F2F4F7;
+                padding-left: 20px;
+                z-index: 999;
+            }
+        }
+        .report-cont{
+            width: 100%;
+            background-color: #F2F4F7;
+            .report-item{
+                width:100%;
+                background-color: #ffffff;
+                .report-item-center{
+                    width:85%;
+                    margin:0 auto 15px;
+                    .report-item-tit{
+                        line-height: 40px;
+                        li{
+                            width:50%;
+                            float: left;
+                            position: relative;
                             font-size: r(28);
                             color: #4F4F6F;
-                            padding-top:15px;
                         }
-                        .re-num{
-                            .re-num-i:nth-child(2){
-                                float: right;
+                        .tit-name{
+                            padding-left: 26px;
+                            .tit-icon{
+                                width: r(42);
+                                height: r(42);
+                                background-size: 100%;
+                                display: inline-block;
+                                position: absolute;
+                                left: 0;
+                                top:8px;
+                                background-repeat: no-repeat;
                             }
-                            .re-num-i{
-                                float: left;
-                                width:45%;
-                                background: #F6FAFF;
-                                border-radius: r(8);
-                                text-align: center;
-                                padding:13px 0;
-                                margin-top:15px;
-                                .i-n{
-                                    .i-n-l{
-                                        font-size: r(40);
-                                        color: #4F4F6F;
-                                    }
-                                    .i-n-p{
-                                        font-size: r(22);
-                                        margin-left:5px;
-                                        i{
-                                            font-style: normal;
+                            .tit-icon-country{
+                                background-image: url(../../assets/icon/country_icon.png);
+                            }
+                            .tit-icon-region{
+                                background-image: url(../../assets/icon/region_icon.png);
+                            }
+                            .tit-icon-company{
+                                background-image: url(../../assets/icon/company_icon.png);
+                            }
+                        }
+                        .tit-total{
+                            text-align: right;
+                        }
+                    }
+                    .report-list{
+                        .report-list-li{
+                            border-top: 1px solid #EAE9F2;
+                            padding-bottom:15px;
+                            .re-p{
+                                font-size: r(28);
+                                color: #4F4F6F;
+                                padding-top:15px;
+                            }
+                            .re-num{
+                                .re-num-i:nth-child(2){
+                                    float: right;
+                                }
+                                .re-num-i{
+                                    float: left;
+                                    width:45%;
+                                    background: #F6FAFF;
+                                    border-radius: r(8);
+                                    text-align: center;
+                                    padding:13px 0;
+                                    margin-top:15px;
+                                    .i-n{
+                                        .i-n-l{
+                                            font-size: r(40);
+                                            color: #4F4F6F;
+                                        }
+                                        .i-n-p{
+                                            font-size: r(22);
+                                            margin-left:5px;
+                                            i{
+                                                font-style: normal;
+                                            }
+                                        }
+                                        .i-up{
+                                            color: #F1453D;
+                                        }
+                                        .i-down{
+                                            color: #00E676;
                                         }
                                     }
-                                    .i-up{
-                                        color: #F1453D;
+                                    .i-b{
+                                        font-size: r(23);
+                                        color: #88889C;
+                                        margin-top:5px;
                                     }
-                                    .i-down{
-                                        color: #00E676;
-                                    }
+                                    
                                 }
-                                .i-b{
-                                    font-size: r(23);
-                                    color: #88889C;
-                                    margin-top:5px;
-                                }
-                                
                             }
                         }
                     }
                 }
             }
         }
+        .report-end{
+            width: 150px;
+            height:10px;
+            background-image:url(../../assets/icon/placeholder_pageend.png);
+            background-size: 100%;
+            margin:10px auto;
+        }
     }
+    
 }

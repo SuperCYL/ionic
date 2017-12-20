@@ -28,7 +28,7 @@ export class ReportPage {
    companyTotal;
    companyName;
    
-   token = "eyJhbGciOiJIUzI1NiIsImNhbGciOiJHWklQIn0.H4sIAAAAAAAAAKtWKi5NUrJSMjA0szBR0lFKrShQsjI0NTQ2N7EwtzSvBQDD_GS1IAAAAA.AJoypDUTHW2aiW0bWATaMu3BNeolo_Y-yBQRMK_NYHc";
+   token = "eyJhbGciOiJIUzI1NiIsImNhbGciOiJHWklQIn0.H4sIAAAAAAAAAKtWKi5NUrJSMjA0szBR0lFKrShQsjI0NTS2MDY1MzWsBQCkQUVBIAAAAA.6ur5M_3iuW7es94Xst6n3MvXXkN_i7Vd8OmBSqk7o1o";
   constructor(public navCtrl: NavController, public navParams: NavParams,
     private reportProvider:ReportProvider,private mapTs:MapTs,private translate:TranslateHelper) {
       
