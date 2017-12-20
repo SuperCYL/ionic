@@ -39,7 +39,7 @@
                 <p class="i-n">
                   <span class="i-n-l">{{enterprise.salesTotal}}</span>
                   <span class="i-n-p" [style.color]="enterprise.proportion > 0 ? '#F1453D' : '#00E676'">
-                    {{ enterprise.proportion }}
+                    {{ enterprise.proportion | pipeFilter}}
                     <i *ngIf="enterprise.proportion > 0">↑</i>
                     <i *ngIf="enterprise.proportion < 0">↓</i>
                   </span>
@@ -72,7 +72,7 @@
                 <p class="i-n">
                   <span class="i-n-l">{{enterprise.salesTotal}}</span>
                   <span class="i-n-p" [style.color]="enterprise.proportion > 0 ? '#F1453D' : '#00E676'">
-                    {{ enterprise.proportion }}
+                    {{ enterprise.proportion | pipeFilter }}
                     <i *ngIf="enterprise.proportion > 0">↑</i>
                     <i *ngIf="enterprise.proportion < 0">↓</i>
                   </span>
@@ -104,7 +104,7 @@
                   <p class="i-n">
                     <span class="i-n-l">{{company.salesTotal}}</span>
                     <span class="i-n-p" [style.color]="company.proportion > 0 ? '#F1453D' : '#00E676'">
-                      {{ company.proportion }}
+                      {{ company.proportion | pipeFilter }}
                       <i *ngIf="company.proportion > 0">↑</i>
                       <i *ngIf="company.proportion < 0">↓</i>
                     </span>
@@ -119,8 +119,4 @@
       </div>
       <!-- company end -->
   </div>
-
-
-
-  <div>{{'sssss' | pipeFilter}}</div>
 </ion-content>

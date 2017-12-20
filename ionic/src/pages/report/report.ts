@@ -6,7 +6,6 @@ import { TranslateHelper } from "../../providers/helper/TranslateHelper";
 import { ReportProvider } from "../../providers/report/report"
 import { MapTs } from "../../assets/js/map"
 
-import { PipesModule } from "../../pipes/pipes.module"
 
 /**
  * Generated class for the ReportPage page.
@@ -30,7 +29,7 @@ export class ReportPage {
    companyName;
    
    token = "eyJhbGciOiJIUzI1NiIsImNhbGciOiJHWklQIn0.H4sIAAAAAAAAAKtWKi5NUrJSMjA0szBR0lFKrShQsjI0NTQ2N7EwtzSvBQDD_GS1IAAAAA.AJoypDUTHW2aiW0bWATaMu3BNeolo_Y-yBQRMK_NYHc";
-  constructor(public navCtrl: NavController, public navParams: NavParams,public PipesModule: PipesModule,
+  constructor(public navCtrl: NavController, public navParams: NavParams,
     private reportProvider:ReportProvider,private mapTs:MapTs,private translate:TranslateHelper) {
       
   }

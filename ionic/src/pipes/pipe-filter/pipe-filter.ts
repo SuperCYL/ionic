@@ -13,6 +13,9 @@ export class PipeFilterPipe implements PipeTransform {
    * Takes a value and makes it lowercase.
    */
   transform(value: string, ...args) {
-    return value.toLowerCase();
+    value = value + '';
+    if(value.indexOf("-") !== -1){
+      return value.replace(/-/, "")
+    }
   }
 }
